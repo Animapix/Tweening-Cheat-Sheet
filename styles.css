@@ -1,0 +1,334 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORPS DE PAGE */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-width: 650px; /* Ajout de la largeur minimale */
+}
+
+/* Style de la scrollbar pour le body (défilement global) */
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e2e;
+    border: 1px solid transparent; /* Ajout d'une bordure transparente */
+}
+body::-webkit-scrollbar-thumb {
+    background: #6b48ff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #8a67ff;
+}
+
+body::-webkit-scrollbar-corner {
+    background: #1e1e2e; /* Couleur des coins pour le body */
+}
+
+/* HEADER FIXE EN HAUT */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0f0f1a;
+    padding: 25px 40px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid #2a2a3d;
+    height: 220px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #b0b0c0;
+    max-width: 600px;
+}
+
+/* SELECTEUR DE LANGAGE */
+.language-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.language-selector button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    background: #2a2a3d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-selector button:hover {
+    background: #3a3a5d;
+    transform: translateY(-2px);
+}
+
+.language-selector button.active {
+    background: #6b48ff;
+    color: #ffffff;
+}
+
+/* CONTENEUR PRINCIPAL */
+main {
+    flex: 1;
+    padding: 30px 0;
+    margin: 230px 0 60px 0;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: calc(100vh - 120px - 60px);
+    width: 100%;
+    min-width: 650px;
+}
+
+/* Style de la scrollbar pour main */
+main::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+main::-webkit-scrollbar-track {
+    background: #1e1e2e;
+    border-radius: 5px;
+    border: 1px solid transparent; /* Ajout d'une bordure transparente */
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #6b48ff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background: #8a67ff;
+}
+
+main::-webkit-scrollbar-corner {
+    background: #1e1e2e; /* Couleur des coins pour main */
+}
+
+/* GRILLE DES TWEENS */
+.tween-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 600px);
+    gap: 20px;
+    padding: 15px;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px;
+}
+
+/* CARTE DE GROUPE */
+.group-card {
+    width: 600px !important;
+    height: 200px !important;
+    background: #252535;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.group-card .tween-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+/* CONTENU DE LA CARTE */
+.group-content {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    height: calc(100% - 30px);
+}
+
+/* ZONE D'ANIMATION */
+.animation-zone {
+    background: #1e1e2e;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #3a3a5d;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-zone canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* ZONE DE CODE */
+.code-zone {
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.code-zone .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    background: #3a3a5d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.code-zone .copy-btn:hover {
+    background: #6b48ff;
+}
+
+.code-block {
+    flex-grow: 1;
+    background: #1e1e2e;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.75rem;
+    overflow: auto;
+    border: 1px solid #3a3a5d;
+}
+
+/* Style de la scrollbar pour les blocs de code */
+.code-block::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: #1e1e2e00;
+    /* border-radius: 4px; */
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: #6b48ff60;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: #8a67ff90;
+}
+
+.code-block::-webkit-scrollbar-corner {
+    background: #00000000;
+}
+
+/* FOOTER FIXE EN BAS */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #b0b0c0;
+    background: #0f0f1a;
+    border-top: 1px solid #2a2a3d;
+    height: 60px;
+    z-index: 100;
+}
+
+/* RESPONSIVITÉ */
+@media (max-width: 1200px) {
+    .tween-grid {
+        grid-template-columns: repeat(auto-fit, 600px);
+    }
+}
+
+@media (max-width: 900px) {
+    .tween-grid {
+        grid-template-columns: repeat(auto-fit, 600px);
+    }
+
+    header {
+        padding: 20px;
+        height: 160px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header p {
+        font-size: .8rem;
+    }
+
+    .language-selector button {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+
+    main {
+        margin: 140px 0 60px 0;
+        height: calc(100vh - 100px - 60px);
+    }
+}
+
+/* Ajout d'une media query pour les écrans plus petits que 650px */
+@media (max-width: 700px) {
+    body {
+        overflow-x: auto; /* Permet un défilement horizontal si la largeur est inférieure à 650px */
+    }
+
+    header {
+        min-width: 700px; /* Assure que le header ne rétrécit pas */
+    }
+
+    main {
+        min-width: 700px; /* Assure que le main ne rétrécit pas */
+    }
+
+    .tween-grid {
+        min-width: 650px; /* Assure que la grille ne rétrécit pas */
+    }
+
+    footer {
+        min-width: 700px; /* Assure que le footer ne rétrécit pas */
+    }
+}

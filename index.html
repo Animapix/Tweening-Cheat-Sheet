@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation des Tweens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- PrismJS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <!-- PrismJS core + langages -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-lua.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+    <script>
+        Prism.languages.pseudo = {
+            'keyword': /\b(IF|THEN|ELSE|END|WHILE|DO|FOR|FROM|TO|REPEAT|UNTIL|FUNCTION|RETURN|VAR|CONST)\b/i,
+            'boolean': /\b(TRUE|FALSE)\b/i,
+            'number': /\b\d+(?:[.,]\d+)?\b/,
+            'operator': /[+\-*/=<>]/,
+            'punctuation': /[(),:]/,
+            'comment': /#.*/,
+            'function': /\b[a-z_][a-z0-9_]*\b(?=\s*\()/i,
+            'string': /"(?:\\.|[^"\\])*"/
+        };
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Visualisation des fonctions d'interpolation</h1>
+        <p>
+            Explorez visuellement le comportement des différentes fonctions de "tweening" utilisées dans les animations.
+            Sélectionnez un langage pour voir le code correspondant à chaque courbe.
+        </p>
+        <div class="language-selector">
+            <button data-lang="pseudo" class="active">Pseudo</button>
+            <button data-lang="lua">Lua</button>
+            <button data-lang="javascript">JavaScript</button>
+            <button data-lang="csharp">C#</button>
+            <button data-lang="cpp">C++</button>
+        </div>
+    </header>
+
+    <main class="tween-container">
+        <div class="tween-grid"></div>
+    </main>
+
+    <footer>
+        Projet pédagogique réalisé Par Animapix.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
