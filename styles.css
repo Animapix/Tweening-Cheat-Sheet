@@ -1,11 +1,9 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CORPS DE PAGE */
 body {
     display: flex;
     flex-direction: column;
@@ -14,10 +12,9 @@ body {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: #e0e0e0;
     line-height: 1.6;
-    min-width: 650px; /* Ajout de la largeur minimale */
+    min-width: 650px;
 }
 
-/* Style de la scrollbar pour le body (défilement global) */
 body::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -25,7 +22,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
     background: #1e1e2e;
-    border: 1px solid transparent; /* Ajout d'une bordure transparente */
+    border: 1px solid transparent;
 }
 body::-webkit-scrollbar-thumb {
     background: #6b48ff;
@@ -38,10 +35,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-corner {
-    background: #1e1e2e; /* Couleur des coins pour le body */
+    background: #1e1e2e;
 }
 
-/* HEADER FIXE EN HAUT */
 header {
     position: fixed;
     top: 0;
@@ -68,7 +64,6 @@ header p {
     max-width: 600px;
 }
 
-/* SELECTEUR DE LANGAGE */
 .language-selector {
     display: flex;
     gap: 10px;
@@ -97,7 +92,6 @@ header p {
     color: #ffffff;
 }
 
-/* CONTENEUR PRINCIPAL */
 main {
     flex: 1;
     padding: 30px 0;
@@ -109,7 +103,6 @@ main {
     min-width: 650px;
 }
 
-/* Style de la scrollbar pour main */
 main::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -118,7 +111,7 @@ main::-webkit-scrollbar {
 main::-webkit-scrollbar-track {
     background: #1e1e2e;
     border-radius: 5px;
-    border: 1px solid transparent; /* Ajout d'une bordure transparente */
+    border: 1px solid transparent;
 }
 
 main::-webkit-scrollbar-thumb {
@@ -132,10 +125,9 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 main::-webkit-scrollbar-corner {
-    background: #1e1e2e; /* Couleur des coins pour main */
+    background: #1e1e2e;
 }
 
-/* GRILLE DES TWEENS */
 .tween-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, 600px);
@@ -146,7 +138,6 @@ main::-webkit-scrollbar-corner {
     min-width: 600px;
 }
 
-/* CARTE DE GROUPE */
 .group-card {
     width: 600px !important;
     height: 200px !important;
@@ -173,7 +164,6 @@ main::-webkit-scrollbar-corner {
     letter-spacing: 0.5px;
 }
 
-/* CONTENU DE LA CARTE */
 .group-content {
     display: flex;
     flex-direction: row;
@@ -181,7 +171,6 @@ main::-webkit-scrollbar-corner {
     height: calc(100% - 30px);
 }
 
-/* ZONE D'ANIMATION */
 .animation-zone {
     background: #1e1e2e;
     border-radius: 6px;
@@ -197,7 +186,6 @@ main::-webkit-scrollbar-corner {
     height: 100%;
 }
 
-/* ZONE DE CODE */
 .code-zone {
     position: relative;
     width: 70%;
@@ -234,7 +222,6 @@ main::-webkit-scrollbar-corner {
     border: 1px solid #3a3a5d;
 }
 
-/* Style de la scrollbar pour les blocs de code */
 .code-block::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -242,7 +229,6 @@ main::-webkit-scrollbar-corner {
 
 .code-block::-webkit-scrollbar-track {
     background: #1e1e2e00;
-    /* border-radius: 4px; */
 }
 
 .code-block::-webkit-scrollbar-thumb {
@@ -259,7 +245,6 @@ main::-webkit-scrollbar-corner {
     background: #00000000;
 }
 
-/* FOOTER FIXE EN BAS */
 footer {
     position: fixed;
     bottom: 0;
@@ -274,7 +259,6 @@ footer {
     z-index: 100;
 }
 
-/* RESPONSIVITÉ */
 @media (max-width: 1200px) {
     .tween-grid {
         grid-template-columns: repeat(auto-fit, 600px);
@@ -310,25 +294,24 @@ footer {
     }
 }
 
-/* Ajout d'une media query pour les écrans plus petits que 650px */
 @media (max-width: 700px) {
     body {
-        overflow-x: auto; /* Permet un défilement horizontal si la largeur est inférieure à 650px */
+        overflow-x: auto;
     }
 
     header {
-        min-width: 700px; /* Assure que le header ne rétrécit pas */
+        min-width: 700px;
     }
 
     main {
-        min-width: 700px; /* Assure que le main ne rétrécit pas */
+        min-width: 700px;
     }
 
     .tween-grid {
-        min-width: 650px; /* Assure que la grille ne rétrécit pas */
+        min-width: 650px;
     }
 
     footer {
-        min-width: 700px; /* Assure que le footer ne rétrécit pas */
+        min-width: 700px;
     }
 }
